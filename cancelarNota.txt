@@ -1,0 +1,9 @@
+create table cancelarNota( // obs: cancelar uma Nota Fiscal de Serviços Eletrônica já emitida
+	id auto_increment not null,
+	ccm not null,
+	cnpj not null,
+	senha not null,
+	nota not null,
+	motivo not null tam_min(5),
+	email null
+); // obs: cancelar até o dia 12 do mês subsequente ao da emissão da nota

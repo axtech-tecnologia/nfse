@@ -1,0 +1,11 @@
+create table consultarNotaPrestador( // obs: consultar notas já emitidas
+	id auto_increment not null,
+	ccm not null,
+	cnpj not null,
+	senha not null,
+	crc null,
+	crc_estado null,
+	aliquota_simples not null,
+	idSisLegado null,
+	Nota not null
+);

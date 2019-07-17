@@ -1,0 +1,9 @@
+create table consultarNotaValida(  // obs: verificar a autenticidade de uma Nfe
+	id auto_increment not null,
+	nota not null,
+	serie not null,
+	valor not null,
+	prestador_ccm not null,
+	prestador_cnpj not null,
+	autenticidade not null
+);
