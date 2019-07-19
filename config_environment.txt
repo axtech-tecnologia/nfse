@@ -1,0 +1,24 @@
+$ sudo apt update
+$ sudo apt upgrade
+$ mkdir nfse
+$ python --version  // if version < 3.6 => go to step 1, but if version >= 3.6 => go to next step
+1 - $ sudo apt install python3.6
+1 - $ alias python=python3
+$ python -m venv venv
+$ source venv/bin/activate
+$ sudo apt install postgresql   // see what's the last version installed (#)
+$ sudo vi /etc/postgresql/#/main/postgresql.conf
+change the key: listen_addresses = '*'
+$ sudo vi /etc/postgresql/#/main/pg_hba.conf
+include in the end of file: host  all   all   0.0.0.0/0   md5
+$ /etc/init.d/postgresql restart
+$ sudo su - postgres
+# psql
+postgres# select current_user;
+postgres# select inet_server_port();
+postgres# select current_database();
+postgres# select version();
+postgres# \q
+# exit
+$ sudo adduser "user"
+type the password and retype the password
