@@ -22,3 +22,30 @@ postgres# \q
 # exit
 $ sudo adduser "user"
 type the password and retype the password
+$ sudo su - postgres
+# psql template1
+template1# create user "user" with password "password";
+template1# create database "banco";
+template1# grant ALL PRIVILEGES on database "banco" to "user";
+template1# \q
+# exit
+$ su - "user"
+$ psql -d "banco" -U "user"
+"user"$ \q
+$ exit
+$ sudo wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.10/pip/pgadmin4-4.10-py2.py3-none-any.whl
+$ pip install wheel
+$ sudo apt install python3-dev
+$ pip install pgadmin4-4.10-py2.py3-none-any.whl
+$ cd ./venv/lib/python3.6/site-packages/pgadmin4/config.py ./venv/lib/python3.6/site-packages/pgadmin4/config_local.py
+$ sudo vi ./venv/lib/python3.6/site-packages/pgadmin4/config_local.py
+change the key: SERVER_MODE = True to False
+change the key: DEFAULT_SERVER = 'localhost' to '0.0.0.0'
+$ sudo mkdir /var/lib/pgadmin
+$ sudo mkdir /var/log/pgadmin
+$ sudo chown -R "user":root /var/lib/pgadmin
+$ sudo chown -R "user":root /var/log/pgadmin
+$ python ./venv/lib/python3.6/site-packages/pgadmin4/pgAdmin4.py
+enter a valid email and type the password
+open the pgadmin in the browser on 127.0.0.1:5050
+GO BE HAPPY!!
